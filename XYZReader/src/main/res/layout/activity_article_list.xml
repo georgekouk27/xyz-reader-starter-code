@@ -19,10 +19,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/material_app_bar_default_height"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/list_side_margin"
+                android:layout_margin="@dimen/material_baseline_grid_0.5x"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/logo" />
+
         </android.support.v7.widget.Toolbar>
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout
@@ -36,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:padding="@dimen/list_side_margin"
+            android:padding="@dimen/material_baseline_grid_1x"
             android:scrollbarStyle="outsideOverlay" />
 
     </android.support.v4.widget.SwipeRefreshLayout>

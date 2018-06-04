@@ -25,7 +25,7 @@ public class ArticleDetailActivity extends AppCompatActivity
     private long startId;
 
     private ViewPager pager;
-    private MyPagerAdapter mPagerAdapter;
+    private MyPagerAdapter pagerAdapter;
 
 
     @Override
@@ -36,9 +36,10 @@ public class ArticleDetailActivity extends AppCompatActivity
 
         getLoaderManager().initLoader(0, null, this);
 
-        mPagerAdapter = new MyPagerAdapter(getFragmentManager());
+        pagerAdapter = new MyPagerAdapter(getFragmentManager());
+
         pager = findViewById(R.id.pager);
-        pager.setAdapter(mPagerAdapter);
+        pager.setAdapter(pagerAdapter);
         pager.setPageMargin((int) TypedValue
                 .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics()));
         pager.setPageMarginDrawable(new ColorDrawable(0x22000000));
@@ -73,11 +74,11 @@ public class ArticleDetailActivity extends AppCompatActivity
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor1) {
         cursor = cursor1;
 
-        mPagerAdapter.notifyDataSetChanged();
+        pagerAdapter.notifyDataSetChanged();
 
         if (startId > 0) {
             cursor1.moveToFirst();
-            // TODO: optimize
+
             while (!cursor.isAfterLast()) {
                 if (cursor.getLong(ArticleLoader.Query._ID) == startId) {
                     final int position = cursor.getPosition();
@@ -97,7 +98,7 @@ public class ArticleDetailActivity extends AppCompatActivity
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
         cursor = null;
 
-        mPagerAdapter.notifyDataSetChanged();
+        pagerAdapter.notifyDataSetChanged();
     }
 
 

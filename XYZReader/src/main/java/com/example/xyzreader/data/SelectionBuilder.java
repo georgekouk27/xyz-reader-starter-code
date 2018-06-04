@@ -37,6 +37,7 @@ import android.text.TextUtils;
  * thread safe.
  */
 public class SelectionBuilder {
+
     private String mTable = null;
     private HashMap<String, String> mProjectionMap;
     private StringBuilder mSelection;
@@ -206,4 +207,5 @@ public class SelectionBuilder {
         assertTable();
         return db.delete(mTable, getSelection(), getSelectionArgs());
     }
+
 }

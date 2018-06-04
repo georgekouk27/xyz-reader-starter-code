@@ -3,6 +3,7 @@ package com.example.xyzreader.data;
 import android.net.Uri;
 
 public class ItemsContract {
+
 	public static final String CONTENT_AUTHORITY = "com.example.xyzreader";
 	public static final Uri BASE_URI = Uri.parse("content://com.example.xyzreader");
 
@@ -51,4 +52,5 @@ public class ItemsContract {
 
 	private ItemsContract() {
 	}
+
 }
